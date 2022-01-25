@@ -1,0 +1,26 @@
+$colors: (
+  primary: (
+    blue: hsl(220, 98%, 61%),
+  ),
+  light: (
+    g-blue-light: hsl(233, 11%, 84%),
+    g-blue-lighter: hsl(236, 33%, 92%),
+
+    g-blue-dark: hsl(236, 9%, 61%),
+    g-blue-darker: hsl(235, 19%, 35%),
+
+    gray-lighter: hsl(0, 0%, 98%),
+  ),
+  dark: (
+    blue-darker: hsl(235, 21%, 11%),
+
+    g-blue-light: hsl(234, 39%, 85%),
+    g-blue-light-hover: hsl(236, 33%, 92%),
+
+    g-blue-dark: hsl(234, 11%, 52%),
+    g-blue-darker1: hsl(233, 14%, 35%),
+    g-blue-darker2: hsl(237, 14%, 26%),
+    
+    d-blue-darker: hsl(235, 24%, 19%),
+  ),
+);
