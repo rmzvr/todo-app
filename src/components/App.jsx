@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import Checkbox from "./UI/Checkbox";
 import Input from "./UI/Input";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+
+    if (!currentTheme) {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      setTheme(currentTheme);
+    }
+  }, []);
 
   return (
     <div className="App" data-theme={theme}>

@@ -2,6 +2,9 @@
   --clr-primary-blue: hsl(220, 98%, 61%);
   --clr-primary-white: hsl(0, 0%, 100%);
   --clr-logo: hsl(0, 0%, 100%);
+}
+
+[data-theme=light] {
   --clr-g-blue-light: hsl(233, 11%, 84%);
   --clr-g-blue-darker: hsl(235, 19%, 35%);
   --clr-background: hsl(0, 0%, 98%);

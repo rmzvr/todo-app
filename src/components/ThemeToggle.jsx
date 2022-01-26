@@ -2,7 +2,15 @@ import React from "react";
 
 function ThemeToggle({ theme, setTheme }) {
   function toggleTheme() {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    if (theme === "light") {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    }
+
+    if (theme === "dark") {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    }
   }
 
   return (
