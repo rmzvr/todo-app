@@ -1,0 +1,83 @@
+.checkbox-wrapper {
+  position: relative;
+
+  display: inline-block;
+
+  width: 100%;
+  max-width: 24px;
+  min-height: 24px;
+
+  border-radius: 50%;
+
+  user-select: none;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  // Hover event
+  &:hover > .checkbox ~ .border {
+    border: none;
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  }
+
+  // Click event
+  & > .checkbox:checked ~ .checkmark {
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+
+    & .checkmark__icon {
+      display: block;
+    }
+  }
+
+  & > .checkbox:checked ~ .border {
+    border: none;
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  }
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+
+  // Focus event
+  &:focus ~ .border {
+    border: none;
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  }
+}
+
+.border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 50%;
+  border: 1px solid var(--clr-checkbox-border);
+}
+
+.checkmark {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 22px;
+  max-height: 22px;
+
+  border-radius: 50%;
+
+  background-color: var(--clr-wrapper-background);
+}
+
+.checkmark__icon {
+  display: none;
+}

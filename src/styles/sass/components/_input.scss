@@ -1,0 +1,9 @@
+.input {
+  width: 100%;
+
+  color: var(--clr-new-task-text);
+
+  &::placeholder {
+    opacity: 1;
+  }
+}

@@ -1,26 +1,31 @@
-$colors: (
-  primary: (
-    blue: hsl(220, 98%, 61%),
-  ),
-  light: (
-    g-blue-light: hsl(233, 11%, 84%),
-    g-blue-lighter: hsl(236, 33%, 92%),
+:root {
+  --clr-primary-blue: hsl(220, 98%, 61%);
+  --clr-primary-white: hsl(0, 0%, 100%);
 
-    g-blue-dark: hsl(236, 9%, 61%),
-    g-blue-darker: hsl(235, 19%, 35%),
+  --clr-logo: hsl(0, 0%, 100%);
 
-    gray-lighter: hsl(0, 0%, 98%),
-  ),
-  dark: (
-    blue-darker: hsl(235, 21%, 11%),
+  --clr-g-blue-light: hsl(233, 11%, 84%);
+  --clr-g-blue-darker: hsl(235, 19%, 35%);
+  --clr-background: hsl(0, 0%, 98%);
 
-    g-blue-light: hsl(234, 39%, 85%),
-    g-blue-light-hover: hsl(236, 33%, 92%),
+  --clr-wrapper-background: hsl(0, 0%, 100%);
+  --clr-wrapper-shadow: hsla(237, 20%, 80%, 0.5);
 
-    g-blue-dark: hsl(234, 11%, 52%),
-    g-blue-darker1: hsl(233, 14%, 35%),
-    g-blue-darker2: hsl(237, 14%, 26%),
-    
-    d-blue-darker: hsl(235, 24%, 19%),
-  ),
-);
+  --clr-new-task-text: hsl(235, 9%, 61%);
+  --clr-checkbox-border: hsl(236, 33%, 92%);
+}
+
+[data-theme="dark"] {
+  --clr-g-blue-light: hsl(234, 39%, 85%);
+  --clr-g-blue-light-hover: hsl(236, 33%, 92%);
+  --clr-g-blue-darker1: hsl(233, 14%, 35%);
+  --clr-d-blue-darker: hsl(235, 24%, 19%);
+  --clr-background: hsl(235, 21%, 11%);
+
+  --clr-wrapper-background: hsl(235, 24%, 19%);
+  --clr-wrapper-shadow: rgba(0, 0, 0, 0.5);
+
+  --clr-new-task-text: hsl(234, 11%, 52%);
+
+  --clr-checkbox-border: hsl(237, 14%, 26%);
+}

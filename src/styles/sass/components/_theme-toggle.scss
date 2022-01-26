@@ -1,0 +1,10 @@
+.theme-toggle {
+  height: 26px;
+
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: 4px dotted rgba(170, 50, 220, 0.6);
+  }
+}
