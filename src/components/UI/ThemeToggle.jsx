@@ -15,7 +15,7 @@ function ThemeToggle({ theme, setTheme }) {
 
   return (
     <button type="button" className="theme-toggle" onClick={toggleTheme}>
-      {theme === "dark" ? (
+      {theme === "light" ? (
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
           <path
             fill="#FFF"

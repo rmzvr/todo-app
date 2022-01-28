@@ -1,9 +1,12 @@
 .input {
   width: 100%;
 
-  color: var(--clr-new-task-text);
+  color: var(--clr-input-text);
+  caret-color: var(--clr-caret-color);
 
   &::placeholder {
     opacity: 1;
+
+    color: var(--clr-input-placeholder);
   }
 }

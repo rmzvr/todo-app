@@ -1,0 +1,30 @@
+.tasks {
+  border-radius: 5px;
+
+  background-color: var(--clr-wrapper-background);
+  box-shadow: 0px 35px 50px -15px var(--clr-wrapper-shadow);
+}
+
+.tasks__footer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 24px;
+
+  color: var(--clr-action-text);
+}
+
+.tasks__sort-list {
+  display: flex;
+
+  & > * + * {
+    margin-left: 18px;
+  }
+}
+
+.tasks__sort-item {
+  &.active > button {
+    color: var(--clr-blue);
+  }
+}

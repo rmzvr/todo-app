@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "./UI/ThemeToggle";
 import Checkbox from "./UI/Checkbox";
 import Input from "./UI/Input";
+import Tasks from "./Tasks";
 
 function App() {
   const [theme, setTheme] = useState("");
@@ -29,6 +30,8 @@ function App() {
             <Checkbox />
             <Input type="text" placeholder="Create a new todo…" />
           </div>
+          <Tasks />
+          <div className="hint">Drag and drop to reorder list</div>
         </main>
       </div>
     </div>

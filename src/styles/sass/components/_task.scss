@@ -1,0 +1,26 @@
+.task {
+  display: flex;
+  align-items: center;
+
+  padding: 20px 24px;
+
+  border-bottom: solid 1px var(--clr-border);
+
+  color: var(--clr-task-text);
+
+  & > * + * {
+    margin-left: 24px;
+  }
+
+  &.completed span {
+    text-decoration: line-through;
+    color: var(--clr-text-strikethrough);
+  }
+}
+
+.task--empty {
+  display: flex;
+  justify-content: center;
+
+  color: var(--clr-action-text);
+}
