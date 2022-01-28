@@ -605,15 +605,32 @@ html {
 .task > * + * {
   margin-left: 24px;
 }
-.task.completed span {
+.task.completed .tast__text {
   text-decoration: line-through;
   color: var(--clr-text-strikethrough);
+}
+.task:hover .task__cross {
+  opacity: 1;
+}
+.task:focus {
+  outline: 1px auto;
 }
 
 .task--empty {
   display: flex;
   justify-content: center;
   color: var(--clr-action-text);
+}
+
+.task__cross {
+  opacity: 0;
+  margin-left: auto;
+}
+.task__cross:hover, .task__cross:focus {
+  opacity: 1;
+}
+.task__cross:hover path, .task__cross:focus path {
+  fill: var(--clr-action-hover);
 }
 
 .button:hover, .button:focus {

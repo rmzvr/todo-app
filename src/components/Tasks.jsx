@@ -7,8 +7,18 @@ function Tasks() {
     <section className="tasks">
       <main>
         <ul className="tasks__list">
-          {false ? (
-            <Task />
+          {true ? (
+            <>
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+            </>
           ) : (
             <li className="task task--empty">No tasks to do</li>
           )}

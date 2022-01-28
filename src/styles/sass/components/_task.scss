@@ -12,9 +12,21 @@
     margin-left: 24px;
   }
 
-  &.completed span {
-    text-decoration: line-through;
-    color: var(--clr-text-strikethrough);
+  &.completed {
+    .tast__text {
+      text-decoration: line-through;
+      color: var(--clr-text-strikethrough);
+    }
+  }
+
+  &:hover {
+    .task__cross {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: 1px auto;
   }
 }
 
@@ -23,4 +35,19 @@
   justify-content: center;
 
   color: var(--clr-action-text);
+}
+
+.task__cross {
+  opacity: 0;
+
+  margin-left: auto;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+
+    & path {
+      fill: var(--clr-action-hover);
+    }
+  }
 }
