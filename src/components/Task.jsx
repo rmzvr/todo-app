@@ -2,12 +2,21 @@ import React from "react";
 import Button from "./UI/Button";
 import Checkbox from "./UI/Checkbox";
 
-function Task() {
+function Task({ task, updateTask, removeTask }) {
   return (
-    <li className="task" tabIndex="0">
-      <Checkbox />
-      <span className="tast__text">10 minutes meditation</span>
-      <Button className="task__cross" type="button">
+    <li className={`task ${task.completed ? "completed" : ""}`}>
+      <Checkbox
+        isCompleted={task.completed}
+        handleChange={() =>
+          updateTask({ ...task, completed: !task.completed })
+        }
+      />
+      <span className="task__text">{task.text}</span>
+      <Button
+        className="task__cross"
+        type="button"
+        handleClick={() => removeTask(task)}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
           <path
             fill="#494C6B"

@@ -13,7 +13,7 @@
   }
 
   &.completed {
-    .tast__text {
+    .task__text {
       text-decoration: line-through;
       color: var(--clr-text-strikethrough);
     }
@@ -23,10 +23,6 @@
     .task__cross {
       opacity: 1;
     }
-  }
-
-  &:focus {
-    outline: 1px auto;
   }
 }
 

@@ -470,7 +470,7 @@ html {
   letter-spacing: -0.195px;
 }
 
-.tasks__sort-list {
+.filters {
   font-weight: 700;
 }
 
@@ -496,17 +496,17 @@ html {
   overflow: hidden;
   cursor: pointer;
 }
-.checkbox-wrapper:hover > .checkbox ~ .border {
+.checkbox-wrapper:hover .border {
   border: none;
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
-.checkbox-wrapper > .checkbox:checked ~ .checkmark {
+.checkbox-wrapper > .checkmark.checked {
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
-.checkbox-wrapper > .checkbox:checked ~ .checkmark .checkmark__icon {
+.checkbox-wrapper > .checkmark.checked .checkmark__icon {
   display: block;
 }
-.checkbox-wrapper > .checkbox:checked ~ .border {
+.checkbox-wrapper > .checkmark.checked ~ .border {
   border: none;
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
@@ -584,14 +584,14 @@ html {
   color: var(--clr-action-text);
 }
 
-.tasks__sort-list {
+.filters {
   display: flex;
 }
-.tasks__sort-list > * + * {
+.filters > * + * {
   margin-left: 18px;
 }
 
-.tasks__sort-item.active > button {
+.filter.active > button {
   color: var(--clr-blue);
 }
 
@@ -605,15 +605,12 @@ html {
 .task > * + * {
   margin-left: 24px;
 }
-.task.completed .tast__text {
+.task.completed .task__text {
   text-decoration: line-through;
   color: var(--clr-text-strikethrough);
 }
 .task:hover .task__cross {
   opacity: 1;
-}
-.task:focus {
-  outline: 1px auto;
 }
 
 .task--empty {
@@ -643,7 +640,7 @@ html {
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 70px;
   padding-bottom: 50px;
   background-color: var(--clr-background);
@@ -656,20 +653,28 @@ html {
   background-image: url(../../../public/images/bg-desktop-dark.jpg);
 }
 
-.new-task-field {
+.form {
   display: flex;
   align-items: center;
-  padding: 20px 24px;
   margin-bottom: 24px;
   border-radius: 5px;
   background-color: var(--clr-wrapper-background);
   box-shadow: 0px 35px 50px -15px var(--clr-wrapper-shadow);
 }
-.new-task-field > * + * {
-  margin-left: 24px;
+
+.form__checkbox-wrapper {
+  margin: 20px 24px;
+}
+
+.form__input {
+  padding: 20px 24px 20px 0px;
 }
 
 .hint {
   margin-top: 49px;
   color: var(--clr-action-text);
+}
+
+.no-focus * {
+  outline: none;
 }

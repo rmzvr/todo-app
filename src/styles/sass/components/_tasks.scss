@@ -15,7 +15,7 @@
   color: var(--clr-action-text);
 }
 
-.tasks__sort-list {
+.filters {
   display: flex;
 
   & > * + * {
@@ -23,7 +23,7 @@
   }
 }
 
-.tasks__sort-item {
+.filter {
   &.active > button {
     color: var(--clr-blue);
   }

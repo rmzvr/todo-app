@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function Checkbox() {
-  function toggleCheckboxByKey(event, checkbox) {
-    if (event.key === "Enter") {
-      checkbox.checked = !checkbox.checked;
-    }
-  }
+function Checkbox({ className, handleChange, isCompleted }) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    setIsChecked(isCompleted);
+  }, [isCompleted]);
 
   return (
-    <label className="checkbox-wrapper">
+    <label className={`checkbox-wrapper ${className}`}>
       <input
         className="checkbox"
         type="checkbox"
-        onKeyDown={(e) => toggleCheckboxByKey(e, e.target)}
+        onChange={() => {
+          setIsChecked(!isChecked);
+          handleChange();
+        }}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            setIsChecked(!isChecked);
+            handleChange();
+          }
+        }}
       />
-      <span className="border"></span>
-      <span className="checkmark">
+      <span className={`checkmark ${isChecked ? "checked" : ""}`}>
         <svg
           className="checkmark__icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +38,7 @@ function Checkbox() {
           />
         </svg>
       </span>
+      <span className="border"></span>
     </label>
   );
 }

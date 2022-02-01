@@ -15,13 +15,13 @@
   cursor: pointer;
 
   // Hover event
-  &:hover > .checkbox ~ .border {
+  &:hover .border {
     border: none;
     background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   }
 
   // Click event
-  & > .checkbox:checked ~ .checkmark {
+  & > .checkmark.checked {
     background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 
     & .checkmark__icon {
@@ -29,7 +29,7 @@
     }
   }
 
-  & > .checkbox:checked ~ .border {
+  & > .checkmark.checked ~ .border {
     border: none;
     background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   }

@@ -4,7 +4,7 @@
 @use "./utilities/container" as *;
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
 
   padding-top: 70px;
   padding-bottom: 50px;
@@ -20,25 +20,32 @@
   }
 }
 
-.new-task-field {
+.form {
   display: flex;
   align-items: center;
 
-  padding: 20px 24px;
   margin-bottom: 24px;
 
   border-radius: 5px;
 
   background-color: var(--clr-wrapper-background);
   box-shadow: 0px 35px 50px -15px var(--clr-wrapper-shadow);
+}
 
-  & > * + * {
-    margin-left: 24px;
-  }
+.form__checkbox-wrapper {
+  margin: 20px 24px;
+}
+
+.form__input {
+  padding: 20px 24px 20px 0px;
 }
 
 .hint {
   margin-top: 49px;
 
   color: var(--clr-action-text);
+}
+
+.no-focus * {
+  outline: none;
 }
