@@ -1,0 +1,13 @@
+.filters {
+  display: flex;
+
+  & > * + * {
+    margin-left: 18px;
+  }
+}
+
+.filter {
+  &.active > button {
+    color: var(--clr-blue);
+  }
+}

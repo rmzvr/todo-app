@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import FilterList from "./FilterList";
 import Task from "./Task";
 import Button from "./UI/Button";
 
 function TaskList({ tasks, setTasks }) {
-  const [countOfActiveTasks, setCountOfActiveTasks] = useState(0);
   const [sortedTasks, setSortedTasks] = useState([]);
   const [activeButton, setActiveButton] = useState("All");
+  const [countOfActiveTasks, setCountOfActiveTasks] = useState(0);
 
   useEffect(() => {
     if (activeButton === "All") {
@@ -39,26 +40,57 @@ function TaskList({ tasks, setTasks }) {
     setTasks(tasks.filter((t) => t.completed === false));
   }
 
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+
+    const items = Array.from(sortedTasks);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setSortedTasks(items);
+  }
+
   return (
-    <section className="tasks">
+    <section className="task-section">
       <main>
-        <ul className="tasks__list">
-          {sortedTasks.length > 0 ? (
-            sortedTasks.map((task) => (
-              <Task
-                key={task.id}
-                task={task}
-                updateTask={updateTask}
-                removeTask={removeTask}
-              />
-            ))
-          ) : (
-            <li className="task task--empty">No tasks to do</li>
-          )}
-        </ul>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="tasks">
+            {(provided) => (
+              <ul
+                className="tasks"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {sortedTasks.length > 0 ? (
+                  sortedTasks.map((task, index) => (
+                    <Draggable
+                      key={task.id}
+                      draggableId={task.id}
+                      index={index}
+                    >
+                      {(provided) => (
+                        <Task
+                          innerRef={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          task={task}
+                          updateTask={updateTask}
+                          removeTask={removeTask}
+                        />
+                      )}
+                    </Draggable>
+                  ))
+                ) : (
+                  <li className="task task--empty">No tasks to do</li>
+                )}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
       </main>
-      <footer className="tasks__footer">
-        <ul className="tasks__footer-list">
+      <footer>
+        <ul className="actions">
           <li>
             {countOfActiveTasks} {countOfActiveTasks === 1 ? "item" : "items"}{" "}
             left

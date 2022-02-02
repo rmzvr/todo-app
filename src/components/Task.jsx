@@ -2,14 +2,16 @@ import React from "react";
 import Button from "./UI/Button";
 import Checkbox from "./UI/Checkbox";
 
-function Task({ task, updateTask, removeTask }) {
+function Task({ task, updateTask, removeTask, innerRef, ...props }) {
   return (
-    <li className={`task ${task.completed ? "completed" : ""}`}>
+    <li
+      className={`task ${task.completed ? "completed" : ""}`}
+      ref={innerRef}
+      {...props}
+    >
       <Checkbox
         isCompleted={task.completed}
-        handleChange={() =>
-          updateTask({ ...task, completed: !task.completed })
-        }
+        handleChange={() => updateTask({ ...task, completed: !task.completed })}
       />
       <span className="task__text">{task.text}</span>
       <Button
