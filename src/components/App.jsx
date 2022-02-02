@@ -5,7 +5,14 @@ import TaskForm from "./TaskForm";
 
 function App() {
   const [theme, setTheme] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      return JSON.parse(savedTasks);
+    } else {
+      return [];
+    }
+  });
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
@@ -16,7 +23,9 @@ function App() {
     } else {
       setTheme(currentTheme);
     }
-  }, []);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="App" data-theme={theme}>
