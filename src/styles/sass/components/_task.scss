@@ -10,6 +10,10 @@
 
   & > * + * {
     margin-left: 24px;
+
+    @media only screen and (max-width: 480px) {
+      margin-left: 12px;
+    }
   }
 
   &.completed {
@@ -24,6 +28,10 @@
       opacity: 1;
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    padding: 16px 20px;
+  }
 }
 
 .task--empty {
@@ -34,6 +42,9 @@
 }
 
 .task__cross {
+  width: 18px;
+  height: 18px;
+
   opacity: 0;
 
   margin-left: auto;
@@ -45,5 +56,10 @@
     & path {
       fill: var(--clr-action-hover);
     }
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 12px;
+    height: 12px;
   }
 }

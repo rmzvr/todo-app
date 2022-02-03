@@ -4,6 +4,10 @@ html {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .header__logo {
@@ -13,6 +17,11 @@ html {
   letter-spacing: 15px;
 
   text-transform: uppercase;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 20px;
+    letter-spacing: 7px;
+  }
 }
 
 .task,
@@ -21,11 +30,16 @@ html {
 }
 
 .hint,
-.actions {
+.actions,
+.filters-mobile-wrapper {
   font-size: 14px;
 
   text-align: center;
   letter-spacing: -0.195px;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .filters {

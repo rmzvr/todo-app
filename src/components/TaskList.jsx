@@ -4,9 +4,14 @@ import FilterList from "./FilterList";
 import Task from "./Task";
 import Button from "./UI/Button";
 
-function TaskList({ tasks, setTasks }) {
+function TaskList({
+  tasks,
+  setTasks,
+  activeButton,
+  setActiveButton,
+  isMobile,
+}) {
   const [sortedTasks, setSortedTasks] = useState([]);
-  const [activeButton, setActiveButton] = useState("All");
   const [countOfActiveTasks, setCountOfActiveTasks] = useState(0);
 
   useEffect(() => {
@@ -76,6 +81,7 @@ function TaskList({ tasks, setTasks }) {
                           task={task}
                           updateTask={updateTask}
                           removeTask={removeTask}
+                          isMobile={isMobile}
                         />
                       )}
                     </Draggable>
@@ -95,12 +101,14 @@ function TaskList({ tasks, setTasks }) {
             {countOfActiveTasks} {countOfActiveTasks === 1 ? "item" : "items"}{" "}
             left
           </li>
-          <li>
-            <FilterList
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-            />
-          </li>
+          {!isMobile && (
+            <li>
+              <FilterList
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+              />
+            </li>
+          )}
           <li>
             <Button type="button" handleClick={removeCompletedTasks}>
               Clear Completed

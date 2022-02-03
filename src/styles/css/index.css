@@ -450,12 +450,23 @@ html {
   font-weight: normal;
   line-height: 1;
 }
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
 
 .header__logo {
   font-weight: bold;
   font-size: 40px;
   letter-spacing: 15px;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 480px) {
+  .header__logo {
+    font-size: 20px;
+    letter-spacing: 7px;
+  }
 }
 
 .task,
@@ -464,10 +475,18 @@ html {
 }
 
 .hint,
-.actions {
+.actions,
+.filters-mobile-wrapper {
   font-size: 14px;
   text-align: center;
   letter-spacing: -0.195px;
+}
+@media only screen and (max-width: 480px) {
+  .hint,
+.actions,
+.filters-mobile-wrapper {
+    font-size: 12px;
+  }
 }
 
 .filters {
@@ -524,6 +543,12 @@ html {
   border: none;
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
+@media only screen and (max-width: 480px) {
+  .checkbox-wrapper {
+    max-width: 20px;
+    min-height: 20px;
+  }
+}
 
 .checkbox {
   position: absolute;
@@ -560,6 +585,12 @@ html {
   border-radius: 50%;
   background-color: var(--clr-wrapper-background);
 }
+@media only screen and (max-width: 480px) {
+  .checkmark {
+    max-width: 18px;
+    max-height: 18px;
+  }
+}
 
 .checkmark__icon {
   display: none;
@@ -570,8 +601,10 @@ html {
   cursor: pointer;
   user-select: none;
 }
-.theme-toggle:focus {
-  outline: 4px dotted rgba(170, 50, 220, 0.6);
+@media only screen and (max-width: 480px) {
+  .theme-toggle {
+    height: 20px;
+  }
 }
 
 .task-section {
@@ -590,12 +623,22 @@ html {
 .task > * + * {
   margin-left: 24px;
 }
+@media only screen and (max-width: 480px) {
+  .task > * + * {
+    margin-left: 12px;
+  }
+}
 .task.completed .task__text {
   text-decoration: line-through;
   color: var(--clr-text-strikethrough);
 }
 .task:hover .task__cross {
   opacity: 1;
+}
+@media only screen and (max-width: 480px) {
+  .task {
+    padding: 16px 20px;
+  }
 }
 
 .task--empty {
@@ -605,6 +648,8 @@ html {
 }
 
 .task__cross {
+  width: 18px;
+  height: 18px;
   opacity: 0;
   margin-left: auto;
 }
@@ -614,6 +659,12 @@ html {
 .task__cross:hover path, .task__cross:focus path {
   fill: var(--clr-action-hover);
 }
+@media only screen and (max-width: 480px) {
+  .task__cross {
+    width: 12px;
+    height: 12px;
+  }
+}
 
 .actions {
   display: flex;
@@ -621,6 +672,11 @@ html {
   align-items: center;
   padding: 20px 24px;
   color: var(--clr-action-text);
+}
+@media only screen and (max-width: 480px) {
+  .actions {
+    padding: 16px 20px 20px;
+  }
 }
 
 .filters {
@@ -630,13 +686,61 @@ html {
   margin-left: 18px;
 }
 
+.filters-mobile-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 17px 80.5px;
+  margin-top: 16px;
+  border-radius: 5px;
+  color: var(--clr-action-text);
+  background-color: var(--clr-wrapper-background);
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
 .filter.active > button {
   color: var(--clr-blue);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  background-color: var(--clr-wrapper-background);
+  box-shadow: 0px 35px 50px -15px var(--clr-wrapper-shadow);
+}
+@media only screen and (max-width: 480px) {
+  .form {
+    margin-bottom: 26px;
+  }
+}
+
+.form__checkbox-wrapper {
+  margin: 20px 24px;
+}
+@media only screen and (max-width: 480px) {
+  .form__checkbox-wrapper {
+    margin: 14px 12px 14px 20px;
+  }
+}
+
+.form__input {
+  padding: 20px 24px 20px 0px;
+}
+@media only screen and (max-width: 480px) {
+  .form__input {
+    padding: 17px 21px 17px 0px;
+  }
 }
 
 .container {
   width: min(30rem, 90%);
   margin: 0 auto;
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    width: min(30rem, 87%);
+  }
 }
 
 .App {
@@ -652,27 +756,24 @@ html {
 .App[data-theme=dark] {
   background-image: url(../../../public/images/bg-desktop-dark.jpg);
 }
-
-.form {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-  border-radius: 5px;
-  background-color: var(--clr-wrapper-background);
-  box-shadow: 0px 35px 50px -15px var(--clr-wrapper-shadow);
-}
-
-.form__checkbox-wrapper {
-  margin: 20px 24px;
-}
-
-.form__input {
-  padding: 20px 24px 20px 0px;
+@media only screen and (max-width: 480px) {
+  .App {
+    padding-top: 48px;
+    background-image: url(../../../public/images/bg-mobile-light.jpg);
+  }
+  .App[data-theme=dark] {
+    background-image: url(../../../public/images/bg-mobile-dark.jpg);
+  }
 }
 
 .hint {
   margin-top: 49px;
   color: var(--clr-action-text);
+}
+@media only screen and (max-width: 480px) {
+  .hint {
+    margin-top: 40px;
+  }
 }
 
 .no-focus * {
