@@ -50,7 +50,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/todo-app-using-react-js-scss-qKQjd95oB)
 - Live Site URL: [Github Pages](https://rzvr.github.io/todo-app/)
 
 ### Built with
