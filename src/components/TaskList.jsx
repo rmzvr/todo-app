@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import React, { useState, useLayoutEffect } from "react";
+import { Droppable, Draggable, DragDropContext } from "react-beautiful-dnd";
 import FilterList from "./FilterList";
 import Task from "./Task";
 import Button from "./UI/Button";
@@ -14,7 +14,7 @@ function TaskList({
   const [sortedTasks, setSortedTasks] = useState([]);
   const [countOfActiveTasks, setCountOfActiveTasks] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (activeButton === "All") {
       setSortedTasks(tasks);
     } else if (activeButton === "Active") {

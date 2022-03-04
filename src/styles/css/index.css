@@ -619,6 +619,7 @@ html {
   padding: 20px 24px;
   border-bottom: solid 1px var(--clr-border);
   color: var(--clr-task-text);
+  background-color: var(--clr-wrapper-background);
 }
 .task > * + * {
   margin-left: 24px;

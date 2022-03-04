@@ -7,6 +7,7 @@
   border-bottom: solid 1px var(--clr-border);
 
   color: var(--clr-task-text);
+  background-color: var(--clr-wrapper-background);
 
   & > * + * {
     margin-left: 24px;
